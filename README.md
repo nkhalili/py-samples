@@ -11,3 +11,11 @@ Python does not have switch/case, instead use elif statement.
 ## Loops
 
 Two loops; for & while.
+
+## Class introspection
+
+These functions work by using Class introspection:
+
+- type()
+- id()
+- isinstance()
