@@ -48,9 +48,30 @@ These functions work by using Class introspection:
     x is y | True if the same object
     x is not y | True if not the same object
 
-4. Membership Operators
+4. **Membership Operators**
 
     py | desc
     ------- | -------
     x in y | True if x member of collection y
     x not in y | True if x not member of collection y
+
+## Arithmetic Operators
+
+desc | operator
+------- | -------
+Addition | +
+Subtraction | -
+Multiplication | *
+Division | /
+Integer Division | //
+Remainder(modulo) | %
+Exponent | **
+Unary negative | -
+Unary positive | +
+
+```python
+    # Unary operators
+    z = -1
+    z = +z
+    print(z) # output: -1
+```
