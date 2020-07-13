@@ -104,3 +104,59 @@ You can use else in while, or for loop!
     else:
         print('>Items finished.')
 ```
+
+## Functions
+
+### Arguments
+
+To use argument lists, use *. For keyword arguments (a.k.a dictionary), use **
+
+```python
+    ## Argument list
+    def func(*args):
+        if len(args):
+            for arg in args:
+                print(arg)
+
+    args = ('one', 'two', 'three')
+    func(*args)
+
+    # Keyword arguments or dictionary arguments
+    def kitten(**kwargs):
+        if len(kwargs):
+            for k in kwargs:
+                print(f'Kitten {k} says {kwargs[k]}')
+
+    x = dict(Buffy='meow', Zilla='grr', Angel='rawr')
+    kitten(**x)
+```
+
+### Generators
+
+range() is an example of generators, it is useful for creating a series of values. It uses *yield* return.
+
+```python
+    def inclusive_range(*args):
+        ...
+        i = start
+        while i <= stop:
+            yield i
+            i += step
+```
+
+### Decorators
+
+```python
+    def f1(f):
+        def f2():
+            print('before function call')
+            f()
+            print('after function call')
+        return f2
+
+    @f1
+    def f3():
+        print('this is f3')
+
+    f3()
+```
