@@ -75,3 +75,13 @@ Unary positive | +
     z = +z
     print(z) # output: -1
 ```
+
+## Bitwise Operators
+
+desc | operator
+------- | -------
+And | &
+Or | |
+Xor | ^
+Shift left | <<
+Shift right | >>
