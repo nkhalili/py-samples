@@ -8,7 +8,7 @@ In python blocks do not define scopes, however Functions, Objects, Modules do.
 
 Python does not have switch/case, instead use elif statement.
 
-## Loops
+## Loops I
 
 Two loops; for & while.
 
@@ -85,3 +85,22 @@ Or | |
 Xor | ^
 Shift left | <<
 Shift right | >>
+
+## Loops II
+
+You can use else in while, or for loop!
+
+```python
+    while pw != secret:
+        if pw == '123': break
+        pw = input('Enter secret word:')
+    else: # in case while breaks, else won't run
+        print('>Secret key is correct.')
+
+
+    animals = ('bear', 'bunny', 'dog', 'cat')
+    for pet in animals:
+        print(pet)
+    else:
+        print('>Items finished.')
+```
