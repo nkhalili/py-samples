@@ -160,3 +160,37 @@ range() is an example of generators, it is useful for creating a series of value
 
     f3()
 ```
+
+## Data structures
+
+These collections may contain any object or type.
+
+1. The list type: *ordered* collection, sequential, iteratable, *mutable*
+
+   ```python
+        x = [1, 2, 3, 4, 5]
+   ```
+
+2. Tuple: exactly similar to list but the only difference: it is *immutable*
+
+   ```python
+        x = (1, 2, 3, 4, 5)
+   ```
+
+3. The dictionary type: key-value pairs or hashed array. strings and numbers can always be keys. keys must be immutable.
+
+   ```python
+        # two syntax
+        x = {"a": 1, "b": 2, "c": 3}
+        y = dict(a=1, b=2, c=3)
+   ```
+
+4. The set type: *unordered* list of *unique values*. It's exactly like a list without duplicate elements.
+
+   ```python
+        # two syntax
+        x = {1, 2, 3, 4, 5}
+        y = set(12345)
+   ```
+
+   You can sort a set using sorted() function.
