@@ -24,50 +24,50 @@ These functions work by using Class introspection:
 
 1. **Comparison Operators**
 
-    operator | py | desc
-    ------- | ------- | -------
-    == | a == b | Equal
-    != | a != b | NotEqual
-    < | a < b | Less than
-    > | a > b | Greater than
-    <= | a <= b | Less than or equal
-    >= | a >= b | Greater than or equal
+   | operator | py     | desc                  |
+   | -------- | ------ | --------------------- |
+   | ==       | a == b | Equal                 |
+   | !=       | a != b | NotEqual              |
+   | <        | a < b  | Less than             |
+   | >        | a > b  | Greater than          |
+   | <=       | a <= b | Less than or equal    |
+   | >=       | a >= b | Greater than or equal |
 
 2. **Logical Operators**
 
-    operator | py | desc
-    ------- | ------- | -------
-    and | x and y | True if both x and y
-    or | x or y | True if x or y
-    not | not x | Invert state
+   | operator | py      | desc                 |
+   | -------- | ------- | -------------------- |
+   | and      | x and y | True if both x and y |
+   | or       | x or y  | True if x or y       |
+   | not      | not x   | Invert state         |
 
 3. **Identity Operator**
 
-    py | desc
-    ------- | -------
-    x is y | True if the same object
-    x is not y | True if not the same object
+   | py         | desc                        |
+   | ---------- | --------------------------- |
+   | x is y     | True if the same object     |
+   | x is not y | True if not the same object |
 
 4. **Membership Operators**
 
-    py | desc
-    ------- | -------
-    x in y | True if x member of collection y
-    x not in y | True if x not member of collection y
+   | py         | desc                                 |
+   | ---------- | ------------------------------------ |
+   | x in y     | True if x member of collection y     |
+   | x not in y | True if x not member of collection y |
 
 ## Arithmetic Operators
 
-desc | operator
-------- | -------
-Addition | +
-Subtraction | -
-Multiplication | *
-Division | /
-Integer Division | //
-Remainder(modulo) | %
-Exponent | **
-Unary negative | -
-Unary positive | +
+| desc              | operator |
+| ----------------- | -------- |
+| Addition          | +        |
+| Subtraction       | -        |
+| Multiplication    | \*       |
+| Division          | /        |
+| Integer Division  | //       |
+| Remainder(modulo) | %        |
+| Exponent          | \*\*     |
+| Unary negative    | -        |
+| Unary positive    | +        |
 
 ```python
     # Unary operators
@@ -78,13 +78,13 @@ Unary positive | +
 
 ## Bitwise Operators
 
-desc | operator
-------- | -------
-And | &
-Or | |
-Xor | ^
-Shift left | <<
-Shift right | >>
+| desc        | operator |
+| ----------- | -------- |
+| And         | &        |
+| Or          |          |
+| Xor         | ^        |
+| Shift left  | <<       |
+| Shift right | >>       |
 
 ## Loops II
 
@@ -109,7 +109,7 @@ You can use else in while, or for loop!
 
 ### Arguments
 
-To use argument lists, use *. For keyword arguments (a.k.a dictionary), use **
+To use argument lists, use \*. For keyword arguments (a.k.a dictionary), use \*\*
 
 ```python
     ## Argument list
@@ -133,7 +133,7 @@ To use argument lists, use *. For keyword arguments (a.k.a dictionary), use **
 
 ### Generators
 
-range() is an example of generators, it is useful for creating a series of values. It uses *yield* return.
+range() is an example of generators, it is useful for creating a series of values. It uses _yield_ return.
 
 ```python
     def inclusive_range(*args):
@@ -165,13 +165,13 @@ range() is an example of generators, it is useful for creating a series of value
 
 These collections may contain any object or type.
 
-1. The list type: *ordered* collection, sequential, iteratable, *mutable*
+1. The list type: _ordered_ collection, sequential, iteratable, _mutable_
 
    ```python
         x = [1, 2, 3, 4, 5]
    ```
 
-2. Tuple: exactly similar to list but the only difference: it is *immutable*
+2. Tuple: exactly similar to list but the only difference: it is _immutable_
 
    ```python
         x = (1, 2, 3, 4, 5)
@@ -185,7 +185,7 @@ These collections may contain any object or type.
         y = dict(a=1, b=2, c=3)
    ```
 
-4. The set type: *unordered* list of *unique values*. It's exactly like a list without duplicate elements.
+4. The set type: _unordered_ list of _unique values_. It's exactly like a list without duplicate elements.
 
    ```python
         # two syntax
@@ -194,3 +194,35 @@ These collections may contain any object or type.
    ```
 
    You can sort a set using sorted() function.
+
+## Classes
+
+### Special methods
+
+Special methods start and ends with double underscores e.g. **init**
+
+```python
+class Animal:
+    # Class Variables, same for all objects of a class if they are mutable
+    ## if you need a constant variable for your class, use immutable types
+    x = 'I am a class variable'
+
+    def __init__(self, **kwargs):
+        # Object Variables starts with underscore _ this means do not touch this! use setters instead.
+        # python doesn't have private variables
+        self._type = kwargs['type'] if 'type' in kwargs else '-'
+        self._name = kwargs['name'] if 'name' in kwargs else '-'
+        self._sound = kwargs['sound'] if 'sound' in kwargs else '-'
+    ...
+    ## special method str, overriding string conversion
+    def __str__(self):
+        return f'Name: {self.name()}, Type: {self.type()}, Sound: {self.sound()}'
+    ...
+```
+
+## Generator vs Iterator
+
+Check samples number 12 (using generator which uses yield return) and 18 (using Iterator).
+
+- Generator function is often easier to implement
+- Iterator is functionally identical to generator
