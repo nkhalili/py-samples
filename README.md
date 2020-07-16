@@ -226,3 +226,40 @@ Check samples number 12 (using generator which uses yield return) and 18 (using 
 
 - Generator function is often easier to implement
 - Iterator is functionally identical to generator
+
+## Files
+
+File endings:
+
+1. LF(Line Feed): Linux-based OS file ending e.g. Mac, etc (1 byte)
+   1. decimal: ASCII 10
+   2. Hex: 0a
+2. CR(Carriage Return): e.g. apple2, classic Macs (1 byte)
+   1. decimal: ASCII 13
+   2. Hex: 0d
+3. CRLF: e.g. Windows, OS2, etc (2 bytes)
+
+Two ways to write into a file in python:
+
+1. using writeline()
+
+    ```python
+        infile = open('02/23-lines.txt', 'rt')
+        outfile = open('02/23-lines-copy.txt', 'wt')
+        for line in infile:
+            outfile.writelines(line)
+            print('.', end='', flush=True)
+        outfile.close()
+    ```
+
+2. using print(): with rstrip() you can rewrite file endings with the default os file endings
+
+    ```python
+        infile = open('02/23-lines.txt', 'rt')
+        outfile = open('02/23-lines-copy.txt', 'wt')
+        for line in infile:
+            # rstrip(): rewrite file endings with the default os file endings
+            print(line.rstrip(), file=outfile)
+            print('.', end='', flush=True)
+        outfile.close()
+    ```
